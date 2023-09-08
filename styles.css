@@ -1,0 +1,31 @@
+html,body{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main-container{
+    height: 100vh;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container .page-title{
+    margin: 0;
+    position: absolute;
+    top: 4%;
+    font-size: 4rem;
+}
+
+.sketch-container{
+    height: 500px;
+    width: 500px;
+    border: 2px solid black;
+    transition: 500ms;
+}
+
+.sketch-container .square:hover{
+    cursor: pointer;
+    background-color: black;
+}
