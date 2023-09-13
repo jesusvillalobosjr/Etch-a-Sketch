@@ -5,12 +5,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Etch-a-Sketch</title>
         <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
         <script src="index.js" defer></script>
     </head>
     <body>
         <div class="main-container">
             <h1 class="page-title">Etch-a-Sketch</h1>
             <div class="sketch-container" id="sketch-container"></div>
+            <div class="features-container">
+                <div class="color-container">
+                    <input type="color" class="color-selector" id="color-selector" value="#00000">
+                </div>
+                <button class="clear" id="clear">Clear</button>
+                <button class="eraser" id="eraser">Eraser</button>
+                <div class="slider-container">
+                    <p class="slider-size"><span class="sizeValue"></span> X <span class="sizeValue"></span></p>
+                    <input type="range" class="size-selector" id="size-selector" min="1" max="32" value="16">
+                </div>
+            </div>
         </div>
     </body>
 </html>

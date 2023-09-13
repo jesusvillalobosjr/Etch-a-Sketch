@@ -9,6 +9,9 @@ html,body{
     position: relative;
     justify-content: center;
     align-items: center;
+    background-color: #EDD59E;
+    display: flex;
+    flex-direction: column;
 }
 
 .main-container .page-title{
@@ -16,6 +19,7 @@ html,body{
     position: absolute;
     top: 4%;
     font-size: 4rem;
+    font-family: 'Fredericka the Great', cursive;
 }
 
 .sketch-container{
@@ -25,7 +29,80 @@ html,body{
     transition: 500ms;
 }
 
+.sketch-container .square{
+    background-color: whitesmoke;
+}
+
 .sketch-container .square:hover{
     cursor: pointer;
     background-color: black;
+}
+
+.main-container .features-container{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.main-container .features-container button{
+    display: inline-block;
+    background-color: transparent;
+    height: 70%;
+    border-color: black;
+    cursor: pointer;
+}
+
+.main-container .features-container .color-container{
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    border-radius: 20%;
+}
+
+.main-container .features-container .color-container .color-selector{
+    padding: 0;
+    height: 200%;
+    width: 200%;
+    border: none;
+    background-color: transparent;
+    transform: translate(-25%,-25%);
+    cursor: pointer;
+}
+
+.main-container .features-container .slider-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+    font-family: 'Fredericka the Great', cursive;
+}
+
+.main-container .features-container .slider-container .slider-size{
+    margin: 0;
+}
+
+.main-container .features-container .slider-container .size-selector{
+    -webkit-appearance: none;
+    background-color: transparent;
+}
+
+.main-container .features-container .slider-container .size-selector::-webkit-slider-runnable-track{
+    background-color: #151922;
+    border-radius: 10px;
+    height: 0.7rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.main-container .features-container .slider-container .size-selector::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 1rem;
+    width: 10%;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    margin-top: -2.4px;
 }
