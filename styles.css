@@ -12,12 +12,13 @@ html,body{
     background-color: #EDD59E;
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 .main-container .page-title{
     margin: 0;
     position: absolute;
-    top: 4%;
+    top: 3%;
     font-size: 4rem;
     font-family: 'Fredericka the Great', cursive;
 }
@@ -29,21 +30,22 @@ html,body{
     transition: 500ms;
 }
 
-.sketch-container .square{
+/* .sketch-container .square{
     background-color: whitesmoke;
-}
+} */
 
-.sketch-container .square:hover{
+/* .sketch-container .square:hover{
     cursor: pointer;
     background-color: black;
-}
+} */
 
 .main-container .features-container{
     margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 30px;
+    width: 100%;
 }
 
 .main-container .features-container button{
@@ -52,6 +54,13 @@ html,body{
     height: 70%;
     border-color: black;
     cursor: pointer;
+    border-radius: 10px;
+    width: 5%;
+    transition: all 0.3s;
+}
+
+.main-container .features-container button:hover{
+    transform: scale(1.1);
 }
 
 .main-container .features-container .color-container{
