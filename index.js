@@ -20,6 +20,17 @@ function fillContainer(){
         sketchContainer.appendChild(row);
     }
 }
+
+function setSquares(){
+    squares = document.querySelectorAll(".square");
+    squares.forEach(square => squareFeatures[square.id] = {clicked : false,color : "whitesmoke"});
+    squares.forEach(square => square.addEventListener("mousedown",() => mousedown = true));
+    squares.forEach(square => square.addEventListener("mouseup",() => mousedown = false));
+    squares.forEach(square => square.addEventListener("mousemove",changeColor));
+    squares.forEach(square => square.addEventListener("mouseover",changeColorOnHover));
+    squares.forEach(square => square.addEventListener("mouseout",changeColorOffHover));
+}
+
 function getColorValue(){
    return selectorColor.value; 
 }
@@ -112,11 +123,5 @@ eraserButton.addEventListener("click",(e) => {
 
 sizeMeter.addEventListener("input",() => {
     fillContainer();
-    squares = document.querySelectorAll(".square");
-    squares.forEach(square => squareFeatures[square.id] = {clicked : false,color : "whitesmoke"});
-    squares.forEach(square => square.addEventListener("mousedown",() => mousedown = true));
-    squares.forEach(square => square.addEventListener("mouseup",() => mousedown = false));
-    squares.forEach(square => square.addEventListener("mousemove",changeColor));
-    squares.forEach(square => square.addEventListener("mouseover",changeColorOnHover));
-    squares.forEach(square => square.addEventListener("mouseout",changeColorOffHover));
+    setSquares();
 });
