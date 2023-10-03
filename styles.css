@@ -13,13 +13,12 @@ html,body{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    min-height: 700px;
 }
 
 .main-container .page-title{
     margin: 0;
-    position: absolute;
-    top: 3%;
-    font-size: 4rem;
+    font-size: 3rem;
     font-family: 'Fredericka the Great', cursive;
 }
 
@@ -29,15 +28,6 @@ html,body{
     border: 2px solid black;
     transition: 500ms;
 }
-
-/* .sketch-container .square{
-    background-color: whitesmoke;
-} */
-
-/* .sketch-container .square:hover{
-    cursor: pointer;
-    background-color: black;
-} */
 
 .main-container .features-container{
     margin-top: 10px;
@@ -114,4 +104,27 @@ html,body{
     background-color: white;
     cursor: pointer;
     margin-top: -2.4px;
+}
+
+@media(max-width: 900px){
+    .main-container .page-title{
+        font-size: 2rem;
+        /* top: 2%; */
+    }
+
+    .main-container .features-container .color-container{
+        height: 35px;
+        width: 35px;
+    }
+
+    .main-container .features-container button{
+        width: 60px;
+        height: 30px;
+    }
+}
+
+@media(min-height: 800px){
+    .main-container .page-title{
+        margin-bottom: 20px;
+    }
 }

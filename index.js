@@ -21,8 +21,7 @@ function fillContainer(){
     }
 }
 
-function setSquares(){
-    squares = document.querySelectorAll(".square");
+function setSquares(squares){
     squares.forEach(square => squareFeatures[square.id] = {clicked : false,color : "whitesmoke"});
     squares.forEach(square => square.addEventListener("mousedown",() => mousedown = true));
     squares.forEach(square => square.addEventListener("mouseup",() => mousedown = false));
@@ -100,12 +99,7 @@ let squareFeatures = {};
 fillContainer();
 
 let squares = document.querySelectorAll(".square");
-squares.forEach(square => squareFeatures[square.id] = {clicked : false,color : "whitesmoke"});
-squares.forEach(square => square.addEventListener("mousedown",() => mousedown = true));
-squares.forEach(square => square.addEventListener("mouseup",() => mousedown = false));
-squares.forEach(square => square.addEventListener("mousemove",changeColor));
-squares.forEach(square => square.addEventListener("mouseover",changeColorOnHover));
-squares.forEach(square => square.addEventListener("mouseout",changeColorOffHover));
+setSquares(squares);
 
 clearButton.addEventListener("click",clearSketchContainer);
 
@@ -123,5 +117,32 @@ eraserButton.addEventListener("click",(e) => {
 
 sizeMeter.addEventListener("input",() => {
     fillContainer();
-    setSquares();
+    squares = document.querySelectorAll(".square");
+    setSquares(squares);
 });
+
+function windowResize(){
+    const regex = /[^0-9]/g
+    let windowWidth = window.innerWidth;
+    if(windowWidth < 900){
+        sketchContainer.style.width = "400px";
+        sketchContainer.style.height = "400px";
+        let measurement = sketchContainer.style.width;
+        const heightAndWidthWindow = parseInt(measurement.replace(regex,""));
+        squares.forEach(square => {
+            square.style.height = `${heightAndWidthWindow / getSizeValue()}px`;
+            square.style.width = `${heightAndWidthWindow / getSizeValue()}px`;
+        })
+    }else{
+        sketchContainer.style.width = "500px";
+        sketchContainer.style.height = "500px";
+        let measurement = sketchContainer.style.width;
+        const heightAndWidthWindow = parseInt(measurement.replace(regex,""));
+        squares.forEach(square => {
+            square.style.height = `${heightAndWidthWindow / getSizeValue()}px`;
+            square.style.width = `${heightAndWidthWindow / getSizeValue()}px`;
+        })
+    }
+}
+
+window.addEventListener("resize",windowResize);
